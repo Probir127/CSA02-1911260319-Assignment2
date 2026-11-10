@@ -1,0 +1,2 @@
+0,1,2,3,4,9,97,100,7919,1000003. Cross-check0..10000. Supplied exercise97,100,7919,1000003.
+Fixtures are embedded in the C source; no interactive input is required.

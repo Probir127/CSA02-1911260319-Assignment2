@@ -1,0 +1,4 @@
+      97  prime      divisions = 95
+     100  not prime  divisions = 1
+    7919  prime      divisions = 7917
+ 1000003  prime      divisions = 1000001

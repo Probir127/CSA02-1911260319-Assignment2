@@ -1,0 +1,12 @@
+n,prime,full_remainders,for_remainders,while_remainders,do_remainders,for_guard_divisions,do_guard_divisions
+0,0,0,0,0,0,0,0
+1,0,0,0,0,0,0,0
+2,1,0,0,0,0,1,0
+3,1,1,0,0,0,1,0
+4,0,1,1,1,1,1,0
+9,0,2,2,2,2,2,1
+97,1,95,8,8,8,9,8
+100,0,1,1,1,1,1,0
+7919,1,7917,87,87,87,88,87
+1000003,1,1000001,999,999,999,1000,999
+All four versions agree for 0..10000.
