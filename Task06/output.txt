@@ -1,0 +1,19 @@
+month,opening_paise,interest_paise,payment_paise,closing_paise
+1,1000000,20000,200000,820000
+2,820000,16400,200000,636400
+3,636400,12728,200000,449128
+4,449128,8983,200000,258111
+5,258111,5162,200000,63273
+6,63273,1265,64538,0
+Baseline: months=6 total_interest=64538 total_paid=1064538 paise
+payment_paise,months,status,remaining_paise,total_interest_paise,unrounded_formula_months
+200000,6,PAID,0,64538,6
+100000,12,PAID,0,127032,12
+50000,26,PAID,0,289875,26
+25000,82,PAID,0,1031912,82
+21000,154,PAID,0,2228652,154
+20100,268,PAID,0,4383119,268
+20001,360,LIMIT_REACHED,942552,7142912,501
+20000,0,NON_AMORTIZING,1000000,0,inf
+19999,0,NON_AMORTIZING,1000000,0,inf
+Hand schedule, zero-rate/principal, final payment, invalid data and safety-limit checks passed.
