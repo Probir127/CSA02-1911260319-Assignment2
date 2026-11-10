@@ -1,0 +1,7 @@
+set bit7: 134
+clear AC: 130
+toggle bit7: 2, on=1
+reg & 1u << dev = 128; (reg & 1u) << dev = 0
+This platform: signed char after converting 128 = -128
+All 256 register values verified; million homes: packed=1000000 bytes, array=8000000 bytes
+Function precondition: device index 0..7; validate external indices before shifting.

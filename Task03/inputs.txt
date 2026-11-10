@@ -1,0 +1,2 @@
+Initial0; on LIGHT0; on AC2; toggle FAN1; off LIGHT0. Additional bit7 exercise and all256 register values.
+Fixtures are embedded in the C source; no interactive input is required.
