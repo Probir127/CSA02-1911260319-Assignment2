@@ -1,0 +1,2 @@
+Integer rupees: (100,10,1), (999,1,0), (199,3,1). Rebate checks at 100000 and 100001 paise.
+Fixtures are embedded in the C source; no interactive input is required.

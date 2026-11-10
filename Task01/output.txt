@@ -1,0 +1,9 @@
+price,qty,senior,predicted_total,observed_total,predicted_net,observed_net,correct_paise
+100,10,1,900,900,900,900,89250
+gross=100000 discount=15000 taxable=85000 GST=4250 payable=89250 paise
+999,1,0,1048,1048,998,998,99895
+gross=99900 discount=0 taxable=99900 GST=4995 payable=99895 paise
+199,3,1,537,537,537,537,53282
+gross=59700 discount=8955 taxable=50745 GST=2537 payable=53282 paise
+Correct counter update: ++count; count=1
+Rebate threshold: 100000 paise unchanged; 100001 paise -> 95001
