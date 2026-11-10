@@ -1,0 +1,2 @@
+N=1000003;1000queriescycling97,100,7919,1000003. Exhaustive verification0..1000003.
+Fixtures are embedded in the C source; no interactive input is required.

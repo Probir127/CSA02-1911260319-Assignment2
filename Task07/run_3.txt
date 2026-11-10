@@ -1,0 +1,7 @@
+method,queries,prime_answers,query_remainders,query_guard_divisions,flag_bytes
+sqrt_trial,1000,750,273750,274500,0
+sieve,1000,750,0,0,1000004
+Preprocessing: initialized_flags=1000004 outer_tests=999 marking_writes=2122051
+CPU_ms: trial=0.247 sieve_build=0.617 lookups=0.000
+Exhaustive validation: all 1000004 inputs from 0 through 1000003 agree.
+Measured objective: 100% fewer query remainder tests; preprocessing and memory are additional costs.
