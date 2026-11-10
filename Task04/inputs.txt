@@ -1,0 +1,2 @@
+Marks -1,0,1,49,50,51,59,60,61,69,70,71,79,80,81,89,90,91,99,100,101. Exhaustive -2..102. Incomes 250000,250001,500000,500001 rupees.
+Fixtures are embedded in the C source; no interactive input is required.
