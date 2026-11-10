@@ -1,0 +1,2 @@
+1000 synthetic indices 0..999. senior=i%4==0; eligible=i%3!=0; verified card=i%10==0.
+Fixtures are embedded in the C source; no interactive input is required.

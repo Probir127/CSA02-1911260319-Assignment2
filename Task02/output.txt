@@ -1,0 +1,10 @@
+0 && verify: calls=0
+1 || verify: calls=0
+0 & verify: calls=1
+version,passengers,card_calls,grants
+eligible_first,1000,834,233
+card_first,1000,1000,233
+nested_if,1000,834,233
+bitwise,1000,1000,233
+audit_all,1000,1000,233
+Verifier is a deterministic test stub; calls model expensive work, not network timings.
