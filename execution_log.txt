@@ -1,0 +1,209 @@
++ set -eu
+++ dirname outputs/CSA02_Assignment2_Solved/tools/run_all.sh
++ cd outputs/CSA02_Assignment2_Solved/tools/..
++ mkdir -p build
++ CC=gcc
++ flags=(-std=c17 -Wall -Wextra -Wpedantic -O2)
++ gcc --version
++ compile task1 Task01/billing.c
++ local exe=task1
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task01/billing.c -o build/task1
++ run Task01/output.txt build/task1
++ local out=Task01/output.txt
++ shift
++ build/task1
++ printf 'PASS %s\n' Task01/output.txt
+PASS Task01/output.txt
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -c Task01/undefined_example.c -o build/undefined_example.o
++ compile task2 Task02/short_circuit.c
++ local exe=task2
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task02/short_circuit.c -o build/task2
++ run Task02/output.txt build/task2
++ local out=Task02/output.txt
++ shift
++ build/task2
++ printf 'PASS %s\n' Task02/output.txt
+PASS Task02/output.txt
++ compile task3_complete Task03/complete_code.c
++ local exe=task3_complete
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task03/complete_code.c -o build/task3_complete
++ run Task03/complete_code_output.txt build/task3_complete
++ local out=Task03/complete_code_output.txt
++ shift
++ build/task3_complete
++ printf 'PASS %s\n' Task03/complete_code_output.txt
+PASS Task03/complete_code_output.txt
++ compile task3 Task03/register_tests.c
++ local exe=task3
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task03/register_tests.c -o build/task3
++ run Task03/output.txt build/task3
++ local out=Task03/output.txt
++ shift
++ build/task3
++ printf 'PASS %s\n' Task03/output.txt
+PASS Task03/output.txt
++ compile task4_complete Task04/complete_code.c
++ local exe=task4_complete
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task04/complete_code.c -o build/task4_complete
++ run Task04/complete_code_output.txt build/task4_complete
++ local out=Task04/complete_code_output.txt
++ shift
++ build/task4_complete
++ printf 'PASS %s\n' Task04/complete_code_output.txt
+PASS Task04/complete_code_output.txt
++ compile task4_fallthrough Task04/fallthrough.c
++ local exe=task4_fallthrough
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task04/fallthrough.c -o build/task4_fallthrough
++ run Task04/fallthrough_output.txt build/task4_fallthrough
++ local out=Task04/fallthrough_output.txt
++ shift
++ build/task4_fallthrough
++ printf 'PASS %s\n' Task04/fallthrough_output.txt
+PASS Task04/fallthrough_output.txt
++ compile task4 Task04/classifier.c
++ local exe=task4
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task04/classifier.c -o build/task4
++ run Task04/output.txt build/task4
++ local out=Task04/output.txt
++ shift
++ build/task4
++ printf 'PASS %s\n' Task04/output.txt
+PASS Task04/output.txt
++ compile task5_complete Task05/complete_code.c
++ local exe=task5_complete
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task05/complete_code.c -o build/task5_complete
++ run Task05/complete_code_output.txt build/task5_complete
++ local out=Task05/complete_code_output.txt
++ shift
++ build/task5_complete
++ printf 'PASS %s\n' Task05/complete_code_output.txt
+PASS Task05/complete_code_output.txt
++ compile task5_full Task05/full_trial.c
++ local exe=task5_full
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task05/full_trial.c -o build/task5_full
++ run Task05/full_trial_output.txt build/task5_full
++ local out=Task05/full_trial_output.txt
++ shift
++ build/task5_full
++ printf 'PASS %s\n' Task05/full_trial_output.txt
+PASS Task05/full_trial_output.txt
++ compile task5 Task05/loops.c Task05/prime.c
++ local exe=task5
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task05/loops.c Task05/prime.c -o build/task5
++ run Task05/output.txt build/task5
++ local out=Task05/output.txt
++ shift
++ build/task5
++ printf 'PASS %s\n' Task05/output.txt
+PASS Task05/output.txt
++ compile task6 Task06/main.c Task06/loan.c -lm
++ local exe=task6
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task06/main.c Task06/loan.c -lm -o build/task6
++ run Task06/output.txt build/task6
++ local out=Task06/output.txt
++ shift
++ build/task6
++ printf 'PASS %s\n' Task06/output.txt
+PASS Task06/output.txt
++ compile task7 Task07/redesign.c Task05/prime.c
++ local exe=task7
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 Task07/redesign.c Task05/prime.c -o build/task7
++ run Task07/output.txt build/task7
++ local out=Task07/output.txt
++ shift
++ build/task7
++ printf 'PASS %s\n' Task07/output.txt
+PASS Task07/output.txt
++ for attempt in 2 3
++ run Task07/run_2.txt build/task7
++ local out=Task07/run_2.txt
++ shift
++ build/task7
++ printf 'PASS %s\n' Task07/run_2.txt
+PASS Task07/run_2.txt
++ for attempt in 2 3
++ run Task07/run_3.txt build/task7
++ local out=Task07/run_3.txt
++ shift
++ build/task7
++ printf 'PASS %s\n' Task07/run_3.txt
+PASS Task07/run_3.txt
++ for task in 3 4 5 6 7
++ case "$task" in
++ sources=(Task03/register_tests.c)
++ compile sanitized_3 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task03/register_tests.c
++ local exe=sanitized_3
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task03/register_tests.c -o build/sanitized_3
++ run Task03/sanitizer_output.txt build/sanitized_3
++ local out=Task03/sanitizer_output.txt
++ shift
++ build/sanitized_3
++ printf 'PASS %s\n' Task03/sanitizer_output.txt
+PASS Task03/sanitizer_output.txt
++ for task in 3 4 5 6 7
++ case "$task" in
++ sources=(Task04/classifier.c)
++ compile sanitized_4 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task04/classifier.c
++ local exe=sanitized_4
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task04/classifier.c -o build/sanitized_4
++ run Task04/sanitizer_output.txt build/sanitized_4
++ local out=Task04/sanitizer_output.txt
++ shift
++ build/sanitized_4
++ printf 'PASS %s\n' Task04/sanitizer_output.txt
+PASS Task04/sanitizer_output.txt
++ for task in 3 4 5 6 7
++ case "$task" in
++ sources=(Task05/loops.c Task05/prime.c)
++ compile sanitized_5 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task05/loops.c Task05/prime.c
++ local exe=sanitized_5
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task05/loops.c Task05/prime.c -o build/sanitized_5
++ run Task05/sanitizer_output.txt build/sanitized_5
++ local out=Task05/sanitizer_output.txt
++ shift
++ build/sanitized_5
++ printf 'PASS %s\n' Task05/sanitizer_output.txt
+PASS Task05/sanitizer_output.txt
++ for task in 3 4 5 6 7
++ case "$task" in
++ sources=(Task06/main.c Task06/loan.c -lm)
++ compile sanitized_6 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task06/main.c Task06/loan.c -lm
++ local exe=sanitized_6
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task06/main.c Task06/loan.c -lm -o build/sanitized_6
++ run Task06/sanitizer_output.txt build/sanitized_6
++ local out=Task06/sanitizer_output.txt
++ shift
++ build/sanitized_6
++ printf 'PASS %s\n' Task06/sanitizer_output.txt
+PASS Task06/sanitizer_output.txt
++ for task in 3 4 5 6 7
++ case "$task" in
++ sources=(Task07/redesign.c Task05/prime.c)
++ compile sanitized_7 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task07/redesign.c Task05/prime.c
++ local exe=sanitized_7
++ shift
++ gcc -std=c17 -Wall -Wextra -Wpedantic -O2 -O1 -fsanitize=address,undefined -fno-omit-frame-pointer Task07/redesign.c Task05/prime.c -o build/sanitized_7
++ run Task07/sanitizer_output.txt build/sanitized_7
++ local out=Task07/sanitizer_output.txt
++ shift
++ build/sanitized_7
++ printf 'PASS %s\n' Task07/sanitizer_output.txt
+PASS Task07/sanitizer_output.txt
++ printf 'All C programs, assertions and sanitizer checks passed.\n'
+All C programs, assertions and sanitizer checks passed.
